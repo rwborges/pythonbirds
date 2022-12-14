@@ -14,3 +14,7 @@ if __name__ == '__main__':
     print(Pessoa.cumprimentar(wendel))
     for filho in wendel.filhos:
         print(filho.nome)
+    wendel.sobrenome = 'Borges'
+    del wendel.filhos
+    print(wendel.__dict__)
+    print(ruan.__dict__)
