@@ -7,7 +7,15 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return 'Olá'
+        return f'Olá {id(self)}'
+
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
 
 
 if __name__ == '__main__':
@@ -27,3 +35,5 @@ if __name__ == '__main__':
     print(ruan.olhos)
     print(wendel.olhos)
     print(id(Pessoa.olhos), id(ruan.olhos), id(wendel.olhos))
+    print(Pessoa.metodo_estatico(), wendel.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), wendel.nome_e_atributos_de_classe())
