@@ -18,9 +18,17 @@ class Pessoa:
         return f'{cls} - olhos {cls.olhos}'
 
 
+class Homem(Pessoa):
+    pass
+
+
+class Mutante(Pessoa):
+    olhos = 1
+
+
 if __name__ == '__main__':
-    ruan = Pessoa(nome='Ruan')
-    wendel = Pessoa(ruan, nome='Wendel')
+    ruan = Mutante(nome='Ruan')
+    wendel = Homem(ruan, nome='Wendel')
     print(Pessoa.cumprimentar(wendel))
     for filho in wendel.filhos:
         print(filho.nome)
@@ -30,10 +38,15 @@ if __name__ == '__main__':
     del wendel.olhos
     print(wendel.__dict__)
     print(ruan.__dict__)
-    Pessoa.olhos = 2
     print(Pessoa.olhos)
     print(ruan.olhos)
     print(wendel.olhos)
     print(id(Pessoa.olhos), id(ruan.olhos), id(wendel.olhos))
     print(Pessoa.metodo_estatico(), wendel.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), wendel.nome_e_atributos_de_classe())
+    pessoa = Pessoa('Anônimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(ruan, Pessoa))
+    print(isinstance(ruan, Homem))
+    print(ruan.olhos)
