@@ -63,7 +63,7 @@ class AtorTestes(TestCase):
         self.assert_colisao_atores_ativos(Ator(2, 2), Ator(1, 3))
 
     def teste_colisao_entre_atores_ativos_com_intervalo(self):
-        # Com intervalo 2, diferente do padrão 1, essa colisão deveria acontecer
+        # Com intervalo 2, diferente do p87Hadrão 1, essa colisão deveria acontecer
         self.assert_colisao_atores_ativos(Ator(2, 2), Ator(2, 4), 2)
 
     def teste_nao_colisao_entre_atores_distantes(self):
